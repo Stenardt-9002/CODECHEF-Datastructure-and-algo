@@ -2,10 +2,6 @@ def stac_k(beg,lis_t):
     j = beg
     stac_kans = 0
     j = j+1
-    # print("j")
-    # print(j)
-    # print("list")
-    # print(lis_t)
     # skip (
     while(lis_t[j]!=')'):
         if lis_t[j] == '(':
