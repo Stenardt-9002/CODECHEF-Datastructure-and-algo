@@ -1,8 +1,5 @@
 #include<stdio.h>
 #include<string.h>
-#define inf 9999
-
-#define FORI(i,a,n) for(i=a;i<=n;i++)
 int main()
 {
 int answer=0;
