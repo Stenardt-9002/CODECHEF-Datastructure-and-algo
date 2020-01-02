@@ -21,7 +21,7 @@ public class Primepoly{
         {
             if (n%i==0) {
                 return false;
-                
+
             }
         }
         return true;
@@ -30,8 +30,8 @@ public class Primepoly{
 
     public static void main(String[] args) throws IOException{
         Primepoly X1 = new Primepoly();
-        
-        
+
+
     }
 
 
