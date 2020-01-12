@@ -15,29 +15,44 @@ class Rabinkarpimn
 
 
     }
+    // System.out.println(phash);
+    // System.out.println(texthas);
 
 
-
-    for (i=patlen; i<lentext ;i++ )
+    for (i=patlen; i<=lentext ;i++ )
     {
       if (phash == texthas)
       {
           for (j=0;j<patlen ; j++)
           {
-            if (pasttern.charAt(j)!=textmain.charAt(i+j)) {
+            if (pasttern.charAt(j)!=textmain.charAt(i+j-patlen))
+            {
+              System.out.println(i);
+              System.out.println(j);
+              System.out.println(pasttern.charAt(i));
+              System.out.println(textmain.charAt(i+j));
+
+              System.out.println("reahcede");
+
               break;
             }
           }
 
-          if(j==patlen-1)
+          if(j==patlen)
           {
-            System.out.println("Found "+i);
+            System.out.println("Found "+(i-patlen));
+            j=0;
           }
 
       }
+      if (i==lentext)
+      {
+          return;
+      }
 
       //not found
-        texthas = (texthas-((textmain.charAt(i-patlen))*CHARACMUKL))*CHARACMUKL+textmain.charAt(i);
+        texthas = (texthas-((textmain.charAt(i-patlen))*(int)(Math.pow(CHARACMUKL,patlen-1))))*CHARACMUKL+textmain.charAt(i);
+        // texthas = (texthas-(textmain.charAt(i-patlen)))*CHARACMUKL+(textmain.charAt(i))*CHARACMUKL;
         // pattern hash same
 
     }
@@ -52,8 +67,13 @@ class Rabinkarpimn
 
 	public static void main(String[] args)
 	{
-		String txt = "GEEKS FOR GEEKS";
-		String pat = "GEEK";
+		// String txt = "This is an pattern testing string in case of fired which again may i say that you are hired but everyday we are tired";
+		// String pat = "ired";
+
+    String txt = "SSASABCASDF";
+    String pat = "AS";
+
+
 		srch(txt,pat);
 	}
 
