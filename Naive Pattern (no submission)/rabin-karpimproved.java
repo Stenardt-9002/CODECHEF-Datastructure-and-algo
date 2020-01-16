@@ -1,18 +1,33 @@
-class Rabinkarpimn
+// #better hashing
+class Rabinkarpimproved
 {
 
   static void srch(String textmain,String pasttern)
   {
     int CHARACMUKL = 256;
+    int hashMaxsize = 15;
     int patlen = pasttern.length();int phash  = 0;
     int lentext = textmain.length()    ;int texthas = 0;
-    //initial length matching
     int i,j;
+
+    // CHARACMUKL^patlen-1 is used so effecient way of calulating it and mod it by hashMaxsize
+    int multilplywhen_shifting = 1;
+    for (i=0; i<patlen;i++ )
+    {
+      multilplywhen_shifting = (multilplywhen_shifting*CHARACMUKL)%hashMaxsize;
+
+
+    }
+
+
+    //initial length matching
+
+
     for (i=0;i<patlen ;i++ )
     {
-        phash = phash*CHARACMUKL+pasttern.charAt(i);
-        texthas = texthas*CHARACMUKL+textmain.charAt(i);
-
+        phash = (phash*CHARACMUKL+pasttern.charAt(i))%hashMaxsize;
+        texthas = (texthas*CHARACMUKL+textmain.charAt(i))%hashMaxsize;
+        // make memory effiecient
 
     }
     // System.out.println(phash);
@@ -27,14 +42,6 @@ class Rabinkarpimn
           {
             if (pasttern.charAt(j)!=textmain.charAt(i+j-patlen))
             {
-            //
-            //   System.out.println(i);
-            //   System.out.println(j);
-            //   System.out.println(pasttern.charAt(i));
-            //   System.out.println(textmain.charAt(i+j));
-            //
-            //   System.out.println("reahcede");
-
               break;
             }
           }
@@ -52,9 +59,16 @@ class Rabinkarpimn
       }
 
       //not found
-        texthas = (texthas-((textmain.charAt(i-patlen))*(int)(Math.pow(CHARACMUKL,patlen-1))))*CHARACMUKL+textmain.charAt(i);
-        // texthas = (texthas-(textmain.charAt(i-patlen)))*CHARACMUKL+(textmain.charAt(i))*CHARACMUKL;
+        // texthas = (texthas-((textmain.charAt(i-patlen))*(int)(Math.pow(CHARACMUKL,patlen-1))))*CHARACMUKL+textmain.charAt(i);
+        //improved pattern
+        texthas = ((texthas-((textmain.charAt(i-patlen))*multilplywhen_shifting))*CHARACMUKL+textmain.charAt(i))%hashMaxsize;
+
         // pattern hash same
+         // NOTE1 REALLY IMPORTANT STUFF
+         if (texthas<0) //modding can give value less than 0
+         {
+           texthas+=hashMaxsize;
+         }
 
     }
 
