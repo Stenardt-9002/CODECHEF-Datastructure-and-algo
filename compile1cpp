@@ -1,0 +1,22 @@
+CC=g++
+LIBS=-pthread
+SRC=src
+input_file=$1
+
+args=$2
+filename=${input_file%%.cpp}
+rc=$?
+echo args
+
+
+
+if [ -z "$2" ]
+ then
+   g++ -std=c++17 -Wshadow -Wall  -O2 -Wno-unused-result $input_file -o $filename.out
+
+else
+
+    g++ -std=c++17 -Wshadow -Wall -O2 -Wno-unused-result $input_file -o $args.out
+
+fi
+

@@ -36,6 +36,21 @@ bool cmpre(Datatpye1 d1, Datatpye1 d2)
 
 }
 
+
+ // cluate
+int recursion1fuc(lld strtindex,lld endinedx,Datatpye1 d1[])
+{
+  if(strtindex==endinedx)
+  {
+    return 1;
+  }
+
+  if (d1[strtindex].width>d1[]) //not optimsed
+
+
+}
+
+
 int main(int argc, char const *argv[])
 {
 
@@ -73,24 +88,36 @@ int main(int argc, char const *argv[])
     //   std::cout << arr1[i][i%2]<<" ";
     // }
 
-    for (lld i = 0; i < countodfolls; i++)
-    {
-      // std::cout << arr1[i][i%2]<<" ";
-      std::cout << arr1[i].height<<",";
-      std::cout << arr1[i].width<<" ";
-    }
-    std::cout << "\n" << '\n';
-    
+    // for (lld i = 0; i < countodfolls; i++)
+    // {
+    //   // std::cout << arr1[i][i%2]<<" ";
+    //   std::cout << arr1[i].height<<",";
+    //   std::cout << arr1[i].width<<" ";
+    // }
+    // std::cout << "\n" << '\n';
+
     sort(arr1,arr1+countodfolls,cmpre);
 
+    // for (lld i = 0; i < countodfolls; i++)
+    // {
+    //   // std::cout << arr1[i][i%2]<<" ";
+    //   std::cout << arr1[i].height<<",";
+    //   std::cout << arr1[i].width<<" ";
+    // }
+
+    // std::cout << "\n" << '\n';
+
+    int min = 99999999;
+
     for (lld i = 0; i < countodfolls; i++)
     {
-      // std::cout << arr1[i][i%2]<<" ";
-      std::cout << arr1[i].height<<",";
-      std::cout << arr1[i].width<<" ";
+      if (min < recursion1fuc(arr1[]))
+      {
+        min = recursion1fuc(i,countodfolls-1,arr1[]);
+      }
+
     }
 
-    std::cout << "\n" << '\n';
 
 
   }
