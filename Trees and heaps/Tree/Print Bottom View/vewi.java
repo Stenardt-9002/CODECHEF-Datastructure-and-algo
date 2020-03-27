@@ -66,15 +66,24 @@ class T1ree
     }
 
 
-    Set<Entry<Integer,Integer>> se1 = map.entrySet();
-    Iterator<Entry<Integer,Integer>> it1era = se1.iterator();
+    // Set<Entry<Integer,Integer>> se1 = map.entrySet();
+    // Iterator<Entry<Integer,Integer>> it1era = se1.iterator();
+    //
+    // while (it1era.hasNext())
+    // {
+    //     Map.Entry<Integer,Integer> tp1 = it1era.next();
+    //     System.out.print(tp1.getValue()+" ");
+    // }
 
-    while (it1era.hasNext())
+
+    // System.out.println(map.size());
+    // Map<Integer,Integer> traers_e ;
+    for (Map.Entry<Integer,Integer> traers_e :map.entrySet() )
     {
-        Map.Entry<Integer,Integer> tp1 = it1era.next();
-        System.out.print(tp1.getValue()+" ");
-    }
+      // System.out.println("\n"+traers_e.getKey());
+      System.out.print(traers_e.getValue()+" " );
 
+    }
 
   }
 
