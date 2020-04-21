@@ -106,7 +106,7 @@ int pathfinding()
 
   board1[nextx][nexty] = 1;
 
-  for (size_t ij = 0; ij < 63; ij++) {
+  for (int ij = 0; ij < 63; ij++) {
     if (nextAlloance(&nextx,&nexty)==0)
     {
       return 0;
