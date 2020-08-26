@@ -13,15 +13,12 @@ int isallowed(vector<int> matrix[],int row,int col,int i1 ,int j1,bool **visited
 
 
 
-
-
-
 void Util_DFS_func(vector<int> matrix[] ,int i1,int j1, int row,int col, bool **visited)
 {
 
-    int x_dir[] = {-1,-1,-1, 0, 0, 1,1,1};
-    int y_dir[] = {-1,-0, 1, 1,-1,-1,0,1};
-    visited[i1][j1] = true; //
+    int x_dir[] =  { -1, -1, -1, 0, 0, 1, 1, 1 }; 
+    int y_dir[] =  { -1, 0, 1, -1, 1, -1, 0, 1 };
+    visited[i1][j1] = true; 
 
     for (int k1 = 0; k1 < 8; k1++)
     {
@@ -29,19 +26,7 @@ void Util_DFS_func(vector<int> matrix[] ,int i1,int j1, int row,int col, bool **
         {
             // if tis is one the go uck thyself;
             Util_DFS_func(matrix,i1+x_dir[k1],j1+y_dir[k1],row,col,visited);
-            cout<<endl<<"Michael Vsauce"<<i1<<" "<<j1<<" "<<k1<<"\n";
-                       for (int i34t = 0; i34t < row; i34t++)
-                            {
-                                cout<<endl;
-                                // vector<int> te1mp(M);
-                                // Arr1[i34t] = te1mp;
-                                for (int j1tra = 0; j1tra < col; j1tra++)
-                                {
-                                cout<<visited[i34t][j1tra]<<" ";
-                                }
-                        
-                            }
-                            cout<<endl;
+
         }
         
     }
@@ -51,22 +36,17 @@ void Util_DFS_func(vector<int> matrix[] ,int i1,int j1, int row,int col, bool **
 }
 
 
+
+
+
+
+
+
+
+
+
 int legalChanel(vector<int>A[],int N,int M)
 {
-    // bool visited[N][M];
-// 3 3
-// 1 1 0 0 0 1 1 0 1
-        // for (int i1 = 0; i1 < N; i1++)
-        // {
-        //     cout<<endl;
-        //     // vector<int> te1mp(M);
-        //     // Arr1[i1] = te1mp;
-        //     for (int j1 = 0; j1 < M; j1++)
-        //     {
-        //         cout<<A[i1][j1]<<" ";
-        //     }
-            
-        // }
 
     
     bool **visited ;
@@ -77,7 +57,7 @@ int legalChanel(vector<int>A[],int N,int M)
         visited[i13] = new bool[M];
         for (int j12 = 0; j12 < M; j12++)
         {
-            visited[i13][j12] = 0;
+            visited[i13][j12] = false;
         }
         
 
@@ -98,19 +78,6 @@ int legalChanel(vector<int>A[],int N,int M)
             {
                 
                     Util_DFS_func(A,itravar1,j1tra,N,M,visited);
-                           for (int i34t = 0; i34t < N; i34t++)
-                            {
-                                cout<<endl;
-                                // vector<int> te1mp(M);
-                                // Arr1[i34t] = te1mp;
-                                for (int j1tra = 0; j1tra < M; j1tra++)
-                                {
-                                cout<<visited[i34t][j1tra]<<" ";
-                                }
-                        
-                            }
-                            cout<<endl;
-
                     count_1++;
             }
             
@@ -118,17 +85,7 @@ int legalChanel(vector<int>A[],int N,int M)
         
     }
     
-        //     for (int itravar1 = 0; itravar1 < N; itravar1++)
-        // {
-        //     cout<<endl;
-        //     // vector<int> te1mp(M);
-        //     // Arr1[itravar1] = te1mp;
-        //     for (int j1 = 0; j1 < M; j1++)
-        //     {
-        //         cout<<visited[itravar1][j1]<<" ";
-        //     }
-            
-        // }
+
 
 
 
@@ -144,7 +101,6 @@ int legalChanel(vector<int>A[],int N,int M)
 
 // return 0;
 }
-
 
 int main(int argc, char const *argv[])
 {
@@ -187,6 +143,3 @@ int main(int argc, char const *argv[])
     }
     return 0;
 }
-
-
-
