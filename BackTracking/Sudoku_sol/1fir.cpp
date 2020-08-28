@@ -21,6 +21,12 @@ bool find_next(int matr_ix[9][9],int &row_x1,int &row_y1)
 bool allowed(int matr_ix[9][9],int row_x1,int row_y1,int val)
 {
      // row check
+    if (matr_ix[row_x1][row_y1]!=0)
+    {
+      return false;
+    }
+    
+
     for (int col = 0; col < 9; col++)
     {
         if (matr_ix[row_x1][col]==val+1 )
@@ -36,10 +42,26 @@ bool allowed(int matr_ix[9][9],int row_x1,int row_y1,int val)
             return false;
         }
     }
+
+
+    int rowstart = row_x1/3;
+    int colstart = row_y1/3;
     
     // 3x3 value check
-        
 
+    for (int ix = rowstart ; ix < rowstart+3; ix++)
+    {
+        for (int ij = colstart; ij < colstart+3; ij++)
+        {
+            if (matr_ix[ix][ij]==val+1)
+            {
+                return false;
+            }
+            
+        }
+        
+    }
+    return true;    
 
 }
 
@@ -61,7 +83,17 @@ bool solve_Sudoku(int matr_ix1[9][9])
     // }
 
 
+    cout<<"DEbug1";
 
+    for (int i1 = 0; i1 < 9; i1++)
+        {
+            cout<<endl;
+            for (int j1 = 0; j1 < 9; j1++)
+            {
+                cout<<matr_ix1[i1][j1]<<" ";
+            }
+            
+        }
 
 
 
@@ -69,10 +101,19 @@ bool solve_Sudoku(int matr_ix1[9][9])
     {
         if (allowed(matr_ix1,rowx,colx,i1))
         {
-            /* code */
+            matr_ix1[rowx][colx] = i1+1;
+    cout<<"DEbug2"<<rowx<<colx;
+
+            if (solve_Sudoku(matr_ix1))
+            {
+                return true;
+            }
+            matr_ix1[rowx][colx] = 0;
+
         }
         
     }
+    return false;
     
 
 }
@@ -84,7 +125,7 @@ int main(int argc, char const *argv[])
     int testcase;
 
     cin>>testcase;
-    int sudoku_block;
+    // int sudoku_block;
     int arr1[9][9];
 
     while (testcase--)
@@ -97,9 +138,34 @@ int main(int argc, char const *argv[])
             }
             
         }
+
+      if (solve_Sudoku(arr1))
+      {
+          
         
+
+        for (int i1 = 0; i1 < 9; i1++)
+        {
+            cout<<endl;
+            for (int j1 = 0; j1 < 9; j1++)
+            {
+                cout<<arr1[i1][j1]<<" ";
+            }
+            
+        }
+      
+      }
+
+       else
+       {
+           cout<<"\nFailed Algo";
+       }
+       
+
     }
     
+
+
 
 
     return 0;
