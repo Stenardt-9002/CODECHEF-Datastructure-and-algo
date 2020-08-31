@@ -36,6 +36,52 @@ Graph* createGraph(int V,int E)
 
 }
 
+
+int find(subset subsets[],int i)
+{
+    if (subsets[i].parent != i)
+    {
+        subsets[i].parent = find(subsets,subsets[i].parent);
+    }
+    return subsets[i].parent;
+}
+
+
+
+void Union(subset subsets[] ,int x1 ,int y1)
+{
+    //combining new edge
+
+    int xrotpar = find(subsets,x1);
+    int yrotpar = find(subsets,y1);
+
+
+    if (subsets[xrotpar].rank<subsets[yrotpar].rank )
+    {
+        subsets[xrotpar].parent = yrotpar;
+
+    }
+    
+    else if (subsets[xrotpar].rank>subsets[yrotpar].rank )
+    {
+        subsets[yrotpar].parent = xrotpar;
+        
+    }
+    else
+    {
+        // both rank equal 
+        subsets[yrotpar].parent = xrotpar;
+        subsets[xrotpar].rank++;
+    }
+    
+    
+
+
+
+}
+
+
+
 bool compare1(Edge a1,Edge b1)
 {
     // Edge* a1 = (Edge*)a;
@@ -50,10 +96,10 @@ void KruskMSTcreate(Graph *graph12)
     int V = graph12->V;
     Edge result[V];
     sort(graph12->edgelist,graph12->edgelist+graph12->E,compare1);
-    for (int i1 = 0; i1 < graph12->E; i1++)
-    {
-        cout<<endl<<" "<<graph12->edgelist[i1].src<<" "<<graph12->edgelist[i1].weight;
-    }
+    // for (int i1 = 0; i1 < graph12->E; i1++)
+    // {
+    //     cout<<endl<<" "<<graph12->edgelist[i1].src<<" "<<graph12->edgelist[i1].weight;
+    // }
     
     subset *subsets = new subset[( V * sizeof(subset) )];  
   
@@ -62,6 +108,41 @@ void KruskMSTcreate(Graph *graph12)
         subsets[v].parent = v;  
         subsets[v].rank = 0;  
     }  
+
+    int edges_til = 0 , itra = 0;
+
+
+    while (edges_til<V-1 && itra < graph12->E)
+    {
+        Edge next_contender = graph12->edgelist[itra++];
+
+    //using disjoint subset union 
+        int x1 = find(subsets,next_contender.src); //parent
+        int y1 = find(subsets,next_contender.dest); //parent
+
+        if (x1!=y1)
+        {
+            result[edges_til++] = next_contender;
+            //allowed now add to rank 
+            Union(subsets,x1,y1);
+
+
+        }
+        
+
+
+
+    }
+    
+
+
+
+
+
+
+
+
+
 }
 
 
