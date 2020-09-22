@@ -67,18 +67,18 @@ int Findmincontestant(int dist[],bool sptSet[] ,int V,int src)
 //     Distance[src] = 0;
 //     for (int eeachvertix = 0; eeachvertix < V-1; eeachvertix++)
 //     {
-//         int min_dist1 = Findmincontestant(Distance,sptSet , V);
+//         int min_idst_vert = Findmincontestant(Distance,sptSet , V);
 
-//         sptSet[min_dist1] = true;
+//         sptSet[min_idst_vert] = true;
 
 //         for (int v1 = 0; v1 < V; v1++)
 //         {
-//             if (!sptSet[v1] && graph1[min_dist1][v1]!=0 && Distance[min_dist1]!=0 && Distance[min_dist1]!=INT16_MAX &&
-//                 Distance[min_dist1]+graph1[min_dist1][v1] < Distance[v1] 
+//             if (!sptSet[v1] && graph1[min_idst_vert][v1]!=0 && Distance[min_idst_vert]!=0 && Distance[min_idst_vert]!=INT16_MAX &&
+//                 Distance[min_idst_vert]+graph1[min_idst_vert][v1] < Distance[v1] 
 
 //               ) 
 //             {
-//              Distance[v1] = Distance[min_dist1]+graph1[min_dist1][v1];
+//              Distance[v1] = Distance[min_idst_vert]+graph1[min_idst_vert][v1];
 //             }
             
 //         }
@@ -108,18 +108,18 @@ void dijkstar1(int graph1[101][101],int src,int V)
     Distance[src] = 0;
     for (int eeachvertix = 0; eeachvertix < V-1; eeachvertix++)
     {
-        int min_dist1 = Findmincontestant(Distance,sptSet , V,eeachvertix);
+        int min_idst_vert = Findmincontestant(Distance,sptSet , V,eeachvertix);
 
-        sptSet[min_dist1] = true;
+        sptSet[min_idst_vert] = true;
 
         for (int v1 = 0; v1 < V; v1++)
         {
-            if (!sptSet[v1] && graph1[min_dist1][v1]!=0 && Distance[min_dist1]!=0 && Distance[min_dist1]!=INT16_MAX &&
-                Distance[min_dist1]+graph1[min_dist1][v1] < Distance[v1] 
-                &&v1!=min_dist1
+            if (!sptSet[v1] && graph1[min_idst_vert][v1]!=0 && Distance[min_idst_vert]!=0 && Distance[min_idst_vert]!=INT16_MAX &&
+                Distance[min_idst_vert]+graph1[min_idst_vert][v1] < Distance[v1] 
+                &&v1!=min_idst_vert
               ) 
             {
-             Distance[v1] = Distance[min_dist1]+graph1[min_dist1][v1];
+             Distance[v1] = Distance[min_idst_vert]+graph1[min_idst_vert][v1];
             }
             
         }
