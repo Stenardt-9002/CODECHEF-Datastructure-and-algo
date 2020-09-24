@@ -12,16 +12,37 @@ void preprocess(string str1,int lps[] )
 
     int i=1; //start from 1 st index 
     int lenpat = str1.length();
-    int i=1;
     while (i<lenpat)
     {
 
-        i++;
+
         if (str1[i]==str1[len])
         {
             len++;
+            lps[i] = len;
+            i++;
+
             
         }
+
+        else
+        {
+
+            if (len!=0)
+            {
+                len = lps[len-1];
+            }
+            else
+            {
+                lps[i] = 0;
+                i+=1;
+
+            }
+            
+            
+            
+        }
+        
         
     }
     
@@ -49,7 +70,7 @@ void KMP_Atemp(string pat,string txt)
         
         if (j==lengpat)
         {
-            printf("The string is found %d",i-j);
+            printf("The string is found %d\n",i-j);
             j = lps[j-1];
 
             
