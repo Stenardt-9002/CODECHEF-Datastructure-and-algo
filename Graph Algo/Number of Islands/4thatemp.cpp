@@ -39,10 +39,10 @@ int isallowed(vector<int>Aray[],int rows,int cols,vector<bool>vsited[],int ROWS,
 void DFSutil(vector <int>Aray[],int rows,int cols,vector <bool>vsited[],int ROWS,int COLS)
 {
 
-    static int rowX[] = {-1,0,1,-1,0,1,-1,0,1};
-    static int rowY[] = {-1,-1,-1,0,0,0,1,1,1};
+    static int rowX[] = {-1,0,1,-1,1,-1,0,1};
+    static int rowY[] = {-1,-1,-1,0,0,1,1,1};
 
-    vsited[rows][cols] = true; //now is visteds find connected parts
+    vsited[rows][cols] = true; //now is visiteds find connected parts
 
     for (int i1 = 0; i1 < 8; i1++)
     {
@@ -71,6 +71,7 @@ int findIslands(vector <int> Aray[],int rows,int cols)
 {
 
     // bool vsited[rows][cols];
+    // int x;
     vector<bool>vsited[rows];
     for (long long int iv = 0; iv < rows; iv++)
     {
@@ -94,7 +95,17 @@ int findIslands(vector <int> Aray[],int rows,int cols)
                 DFSutil(Aray,iv,jv,vsited,rows,cols);
 
                 countisla++;
-
+                // cout<<"\n Debug\n";
+                // for (int i1 = 0; i1 < rows; i1++)
+                // {
+                //     for (int j1 = 0; j1 < cols; j1++)
+                //     {
+                //         cout<<vsited[i1][j1]<<" ";
+                //     }
+                //     cout<<endl;
+                // }
+                
+                // cin>>x;
             }
         }
     }
@@ -110,7 +121,8 @@ int main(int argc, char const *argv[])
     
 long long int rows,cols;
     int testcases;
-    while (testcases-->0)
+    cin>>testcases;
+    while (testcases>0)
     {
         cin>>rows>>cols     ;   
 
@@ -132,7 +144,7 @@ long long int rows,cols;
         cout<< findIslands(inp_ut1,rows,cols);
 
 
-
+        testcases--;
 
     }
 
