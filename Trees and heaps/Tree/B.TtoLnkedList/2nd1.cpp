@@ -11,9 +11,66 @@ public:
 
 };
 
+void Prevptrfix(node *root)
+{
+
+    static node *preptr1 = NULL;
+
+    if (root!=NULL)
+    {
+        Prevptrfix(root->left);
+        root->left = preptr1;
+        preptr1 = root;
+        Prevptrfix(root->right);
+
+    }
+    
+
+
+
+
+}
+
+
+node *Nextptrfix(node *root)
+{
+
+    node *prevvar = NULL;
+
+    while (root && root->right!=NULL)
+    {
+        root = root->right;
+    }
+    
+    while (root && root->left!=NULL)
+    {
+        prevvar = root;
+        root = root->left;
+        root->right = prevvar;
+    }
+    
+
+
+    return root;
+
+}
+
+
+
+
+
+
+
+
 
 node *BTTtoDLL(node *root)
 {
+
+    Prevptrfix(root);
+
+    return Nextptrfix(root);
+
+
 
 }
 
