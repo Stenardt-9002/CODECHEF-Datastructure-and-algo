@@ -12,6 +12,83 @@ int mediancal(int arr1[] , int d)
     
 }
 
+// quickselect
+int select1(int *arr1,int left1,int right1,int num1)
+{
+    while (1)
+    {
+        if (left1==right1)
+        {
+            return left1 ; 
+        }
+        
+        int pivotIndex = pivot(arr1,left1,right1) ;
+        int pivotIndex = partition(arr1,left1,right1,pivotIndex,num1) ;
+        if (num1==pivotIndex)
+        {
+            return num1 ;
+        }
+        else if (num1<pivotIndex)
+        {
+            right1 = pivotIndex-1 ;
+        }
+        
+        else
+        {
+            left1 = pivotIndex+1;
+        }
+        
+        
+
+    }
+    
+
+
+}
+
+
+int partition(int *arr1,int left1,int right1,int pivotIndex , int num1 )
+{
+    int pivotValue = arr1[pivotIndex] ; 
+    
+    //swap
+    int temp1 = arr1[pivotIndex] ; 
+    arr1[pivotIndex] = arr1[right1];
+    arr1[right1] = temp1;
+
+    int storeIndex = left1 ;
+    for (int i1 = left1; i1 < right1-1; i1++)
+    {
+        if (arr1[i1]<pivotIndex)
+        {
+            temp1 = arr1[storeIndex];
+            arr1[storeIndex] = arr1[i1] ; 
+            arr1[i1] = temp1 ;
+            storeIndex++;
+        }
+        
+
+    }
+    
+    int storeindexEq = storeIndex ;
+
+    for (int i1 = storeIndex; i1 < right1-1; i1++)
+    {
+        if ()
+        {
+                
+        }
+        
+    }
+    
+
+
+}
+
+
+
+
+
 
 int activityNotifications(vector<int> expenditure, int d) 
 {
