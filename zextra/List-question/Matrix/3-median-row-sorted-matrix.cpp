@@ -17,6 +17,7 @@ const int MAX = 100;
 
 int binaryMedian(int m[][MAX], int r ,int c)
 {
+	int x ;
 	int min = INT_MAX, max = INT_MIN;
 	for (int i=0; i<r; i++)
 	{
@@ -39,7 +40,8 @@ int binaryMedian(int m[][MAX], int r ,int c)
 		for (int i = 0; i < r; ++i)
 			{
                 place += upper_bound(m[i], m[i]+c, mid) - m[i];
-                cout<<place
+                cout<<place;
+				cin>>x ;
             }
 		if (place < desired)
 			min = mid + 1;
