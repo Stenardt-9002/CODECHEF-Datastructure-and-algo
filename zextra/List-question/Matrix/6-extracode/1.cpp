@@ -26,7 +26,7 @@ int main(int argc, char const *argv[])
     int z ;
     int hist[] = {6,2,5,4,5,1,6};
     int n = sizeof(hist)/sizeof(hist[0]);
-    int tp;  // To store top of stack
+    int tp;  
     int area_with_top; // To store area with top bar
                        // as the smallest bar
     int max_area = 0;
