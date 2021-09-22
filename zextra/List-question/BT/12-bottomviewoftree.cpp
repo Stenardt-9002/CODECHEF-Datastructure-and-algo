@@ -84,7 +84,6 @@ vector<int> bottomView(Node* root)
 int main(int argc, char const *argv[])
 {
 
-
     Node* tree1 = newNode(10);
     tree1->left = newNode(20) ;
     tree1->right = newNode(30) ;
@@ -92,6 +91,16 @@ int main(int argc, char const *argv[])
     tree1->left->right = newNode(60) ;
 
 
+
+
+
+    // Node* tree1 = newNode(20);
+    // tree1->left = newNode(8) ;
+    // tree1->right = newNode(22) ;
+    // tree1->left->left = newNode(4) ;
+    // tree1->left->right = newNode(12) ;
+    // tree1->left->right->left = newNode(10) ;tree1->left->right->right = newNode(14) ;
+    // tree1->right->right = newNode(25) ;
 
     vector<int> asnwer = bottomView(tree1);
     cout<<endl;
