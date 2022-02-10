@@ -60,7 +60,8 @@ Node* Inser1(Node * start1,int insert1)
 
 Node *flatten(Node *root)
 {
-   
+   if (root == NULL || root->next == NULL) 
+            return root; 
 
    Node* dummy = root ;
 
@@ -121,29 +122,34 @@ int main(int argc, char const *argv[])
      temp3->bottom = temp7;
 
 
-    cout<<"\nPrint  "<<temp1->next->data;
     print12(temp1);
-    temp1 = Inser1(temp1,6);
-    cout<<"\nPrint  "<<temp1->next->data;
+    flatten(temp1);
     print12(temp1);
 
 
+    // cout<<"\nPrint  "<<temp1->next->data;
+    // print12(temp1);
+    // temp1 = Inser1(temp1,6);
+    // cout<<"\nPrint  "<<temp1->next->data;
+    // print12(temp1);
 
-    Node* dummy = temp1->next ;
-       while (dummy->bottom!=NULL)
-        {
-            Inser1(temp1,dummy->bottom->data);
-            dummy->bottom = dummy->bottom->bottom;
+
+
+    // Node* dummy = temp1->next ;
+    //    while (dummy->bottom!=NULL)
+    //     {
+    //         Inser1(temp1,dummy->bottom->data);
+    //         dummy->bottom = dummy->bottom->bottom;
             
-        }
-        Inser1(temp1,dummy->data);
+    //     }
+    //     Inser1(temp1,dummy->data);
     
-    // flatten(temp1);
+    // // flatten(temp1);
 
-    cout<<"\nPrint  "<<temp1->next->data;
+    // cout<<"\nPrint  "<<temp1->next->data;
 
 
-    print12(temp1);
+    // print12(temp1);
 
 
 
