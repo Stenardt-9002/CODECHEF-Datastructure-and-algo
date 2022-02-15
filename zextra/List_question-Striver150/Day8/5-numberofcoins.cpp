@@ -28,6 +28,19 @@
 // https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/?ref=lbp
 
 
+// https://www.geeksforgeeks.org/program-nth-catalan-number/
+// https://www.geeksforgeeks.org/bell-numbers-number-of-ways-to-partition-a-set/?ref=lbp
+// https://en.wikipedia.org/wiki/Catalan_number
+// https://en.wikipedia.org/wiki/Bell_number
+// https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/?ref=lbp
+// https://www.geeksforgeeks.org/friends-pairing-problem/
+
+
+
+
+
+
+
 
 
 
