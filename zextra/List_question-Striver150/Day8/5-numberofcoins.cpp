@@ -39,6 +39,27 @@
 
 
 
+https://www.geeksforgeeks.org/printing-solutions-n-queen-problem/
+https://www.youtube.com/watch?v=wT7gcXLYoao&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=56
+https://www.geeksforgeeks.org/permutations-of-a-given-string-using-stl/
+https://www.geeksforgeeks.org/print-all-permutations-of-a-string-with-duplicates-allowed-in-input-string/
+https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+https://www.geeksforgeeks.org/bell-numbers-number-of-ways-to-partition-a-set/?ref=lbp
+https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+https://www.youtube.com/watch?v=b7AYbpM5YrE
+https://www.youtube.com/watch?v=WBgsABoClE0&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=55
+https://www.youtube.com/watch?v=oaVa-9wmpns&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=6
+https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/?ref=lbp
+https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/?ref=lbp
+https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
+https://www.geeksforgeeks.org/recursive-program-to-print-all-subsets-with-given-sum/?ref=lbp
+
+https://www.geeksforgeeks.org/print-sums-subsets-given-set/
+
+
+
+
+
 
 
 

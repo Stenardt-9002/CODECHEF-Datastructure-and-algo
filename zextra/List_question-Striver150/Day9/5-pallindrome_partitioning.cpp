@@ -3,54 +3,53 @@
 using namespace std;
 
 
-
-bool palindrome_check(string s)
-{
-    int dize= s.length();
-    for (int i1 = 0; i1 < dize/2; i1++)
+    bool palindrome_check(string s,int start,int end)
     {
-        if (s[i1]!=s[dize-i1])
+        while(start<=end)        
         {
-            return false ;
+            if (s[start++]!=s[end--])
+            {
+                return false ;
+            }
+
+        }
+        return true ;
+    }
+
+public:
+    
+    void recur1sive(int ind ,string s,vector<vector<string>>&ans,vector<string>&ds1)
+    {
+        
+        
+        if(ind==s.size())
+        {
+            ans.push_back(ds1);
+            return ;
         }
         
+        //each len sbstring 
+        for(int i=ind;i<s.size();i++)
+        if(palindrome_check(s,ind,i)) //previous string partition is palindrome then only
+        {
+            ds1.push_back(s.substr(ind,i-ind+1)); //substring to be inserted for new partion ind to i length and is already a palindrome
+            recur1sive(i+1,s,ans,ds1);
+            ds1.pop_back();//if not
+        }
     }
-    return true ;
-}
-
+    
     
     
     vector<vector<string>> partition(string s) 
     {
-    // #NUMBER OF SUBSTRINGS N(N+1)/2
-
+        
         vector<vector<string>> ans    ;
-        int dize = s.length() ;
-        for (int i1 = 0; i1 < dize-1; i1++)
-        {
-            string tem1p = "";
-            for (int k1 = i1; k1 < dize; k1++)
-            {
-                tem1p+=s[k1];
-                if (palindrome_check(tem1p))
-                {   
-                    vector<string> ds1(tem1p.begin(),tem1p.end()); 
-                    ans.push_back(ds1);
-                }
-            }
-        }
-        return ans ;
+        vector<string>ds1 ; // list of palindrome substrings
+        recur1sive(0,s,ans,ds1);
+        
+        
+        return ans ;    
     }
-
-
-
-
-
-int main(int argc, char const *argv[])
-{
-    
-    return 0;
-}
 
 
 
