@@ -109,7 +109,8 @@ using namespace std;
 
 
 
- int knapSack(int W, int wt[], int val[], int n) 
+
+    int knapSack(int W, int wt[], int val[], int n) 
     { 
 
 
@@ -134,13 +135,13 @@ using namespace std;
                         dp1[i1][j1] = 0;
                     }
                 
-                    if (j1-wt[i1-1]>=0)
+                    else if (j1-wt[i1-1]>=0) // (i1-1)th item cannot be included 
                     {
                         dp1[i1][j1] = max(val[i1-1]+dp1[i1-1][j1-wt[i1-1]] ,dp1[i1-1][j1] );
                     }
                     else
                     {
-                        // cant add weight because crossing liminting restirction
+                        // cant add weight because crossing limiting restriction
                         dp1[i1][j1] = dp1[i1-1][j1] ;
                     }
 

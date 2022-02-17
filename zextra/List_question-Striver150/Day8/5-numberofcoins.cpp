@@ -39,24 +39,22 @@
 
 
 
-https://www.geeksforgeeks.org/printing-solutions-n-queen-problem/
-https://www.youtube.com/watch?v=wT7gcXLYoao&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=56
-https://www.geeksforgeeks.org/permutations-of-a-given-string-using-stl/
-https://www.geeksforgeeks.org/print-all-permutations-of-a-string-with-duplicates-allowed-in-input-string/
-https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
-https://www.geeksforgeeks.org/bell-numbers-number-of-ways-to-partition-a-set/?ref=lbp
-https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
-https://www.youtube.com/watch?v=b7AYbpM5YrE
-https://www.youtube.com/watch?v=WBgsABoClE0&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=55
-https://www.youtube.com/watch?v=oaVa-9wmpns&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=6
-https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/?ref=lbp
-https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/?ref=lbp
-https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
-https://www.geeksforgeeks.org/recursive-program-to-print-all-subsets-with-given-sum/?ref=lbp
+// https://www.geeksforgeeks.org/printing-solutions-n-queen-problem/
+// https://www.youtube.com/watch?v=wT7gcXLYoao&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=56
+// https://www.geeksforgeeks.org/permutations-of-a-given-string-using-stl/
+// https://www.geeksforgeeks.org/print-all-permutations-of-a-string-with-duplicates-allowed-in-input-string/
+// https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+// https://www.geeksforgeeks.org/bell-numbers-number-of-ways-to-partition-a-set/?ref=lbp
+// https://www.geeksforgeeks.org/write-a-c-program-to-print-all-permutations-of-a-given-string/
+// https://www.youtube.com/watch?v=b7AYbpM5YrE
+// https://www.youtube.com/watch?v=WBgsABoClE0&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=55
+// https://www.youtube.com/watch?v=oaVa-9wmpns&list=PLgUwDviBIf0p4ozDR_kJJkONnb1wdx2Ma&index=6
+// https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/?ref=lbp
+// https://www.geeksforgeeks.org/matrix-chain-multiplication-dp-8/?ref=lbp
+// https://www.geeksforgeeks.org/longest-common-subsequence-dp-4/
+// https://www.geeksforgeeks.org/recursive-program-to-print-all-subsets-with-given-sum/?ref=lbp
 
-https://www.geeksforgeeks.org/print-sums-subsets-given-set/
-
-
+// https://www.geeksforgeeks.org/print-sums-subsets-given-set/
 
 
 
@@ -65,7 +63,31 @@ https://www.geeksforgeeks.org/print-sums-subsets-given-set/
 
 
 
-// my appoach
+// https://www.geeksforgeeks.org/space-optimized-solution-lcs/
+// https://www.geeksforgeeks.org/travelling-salesman-problem-set-1/?ref=leftbar-rightbar
+// https://www.geeksforgeeks.org/travelling-salesman-problem-set-2-approximate-using-mst/?ref=lbp
+// https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/
+// https://www.geeksforgeeks.org/cutting-a-rod-dp-13/
+// https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/
+// https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/
+// https://www.geeksforgeeks.org/partition-problem-dp-18/
+// https://www.geeksforgeeks.org/maximum-length-chain-of-pairs-dp-20/
+// https://www.geeksforgeeks.org/variations-of-lis-dp-21/
+// https://www.geeksforgeeks.org/bellman-ford-algorithm-dp-23/?ref=leftbar-rightbar
+
+
+
+// https://www.geeksforgeeks.org/painting-fence-algorithm/
+// https://www.geeksforgeeks.org/bell-numbers-number-of-ways-to-partition-a-set/
+// https://www.geeksforgeeks.org/minimum-number-of-jumps-to-reach-end-of-a-given-array/
+// https://www.geeksforgeeks.org/minimum-number-jumps-reach-endset-2on-solution/
+// https://www.geeksforgeeks.org/maximum-size-rectangle-binary-sub-matrix-1s/?ref=lbp
+
+
+
+
+
+// my approach
 
 
 
