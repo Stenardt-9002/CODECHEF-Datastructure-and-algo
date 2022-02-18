@@ -66,7 +66,6 @@
 // https://www.geeksforgeeks.org/space-optimized-solution-lcs/
 // https://www.geeksforgeeks.org/travelling-salesman-problem-set-1/?ref=leftbar-rightbar
 // https://www.geeksforgeeks.org/travelling-salesman-problem-set-2-approximate-using-mst/?ref=lbp
-// https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/
 // https://www.geeksforgeeks.org/cutting-a-rod-dp-13/
 // https://www.geeksforgeeks.org/floyd-warshall-algorithm-dp-16/
 // https://www.geeksforgeeks.org/palindrome-partitioning-dp-17/
@@ -84,6 +83,12 @@
 // https://www.geeksforgeeks.org/maximum-size-rectangle-binary-sub-matrix-1s/?ref=lbp
 
 
+
+
+
+https://www.geeksforgeeks.org/unbounded-knapsack-repetition-items-allowed/
+https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/               ::Done
+https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/?ref=rp
 
 
 
