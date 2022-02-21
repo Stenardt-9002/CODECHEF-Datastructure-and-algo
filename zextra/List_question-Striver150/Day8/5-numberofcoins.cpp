@@ -86,9 +86,19 @@
 
 
 
-https://www.geeksforgeeks.org/unbounded-knapsack-repetition-items-allowed/
-https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/               ::Done
-https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/?ref=rp
+// https://www.geeksforgeeks.org/unbounded-knapsack-repetition-items-allowed/
+// https://www.geeksforgeeks.org/longest-palindromic-subsequence-dp-12/               ::Done
+// https://www.geeksforgeeks.org/manachers-algorithm-linear-time-longest-palindromic-substring-part-1/?ref=rp
+
+
+
+
+// https://www.geeksforgeeks.org/rat-in-a-maze-backtracking-2/#:~:text=A%20rat%20starts%20from%20source,of%20the%20typical%20Maze%20problem.
+// https://www.geeksforgeeks.org/count-number-ways-reach-destination-maze/
+// https://www.geeksforgeeks.org/find-minimum-moves-reach-target-infinite-line/?ref=lbp
+// https://practice.geeksforgeeks.org/problems/knight-walk4521/1/
+// https://www.geeksforgeeks.org/minimum-steps-to-reach-a-destination/?ref=lbp
+
 
 
 
