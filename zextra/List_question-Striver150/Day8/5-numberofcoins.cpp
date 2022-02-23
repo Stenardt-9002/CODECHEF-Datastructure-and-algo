@@ -102,6 +102,14 @@
 
 
 
+
+// https://www.geeksforgeeks.org/topological-sorting-indegree-based-solution/?ref=leftbar-rightbar
+// https://www.geeksforgeeks.org/all-topological-sorts-of-a-directed-acyclic-graph/
+// https://www.geeksforgeeks.org/strongly-connected-components/?ref=leftbar-rightbar
+// https://www.geeksforgeeks.org/word-ladder-length-of-shortest-chain-to-reach-a-target-word/
+// https://www.geeksforgeeks.org/minimize-count-of-connections-required-to-be-rearranged-to-make-all-the-computers-connected/
+
+
 // my approach
 
 
