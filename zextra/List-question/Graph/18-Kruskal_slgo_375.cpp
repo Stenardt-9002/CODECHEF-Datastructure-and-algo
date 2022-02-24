@@ -1,7 +1,7 @@
 
 
 // https://www.geeksforgeeks.org/kruskals-minimum-spanning-tree-algorithm-greedy-algo-2/
-
+// https://practice.geeksforgeeks.org/problems/minimum-spanning-tree/1/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -55,16 +55,48 @@ public:
 
 
 
+int spanningTree(int V, vector<vector<int>> adj[])
 
-
-
+ {    int v = V;
+        vector<vector<int>> graph1;
+        for(int i1 =0;i1<V;i1++)
+        {
+            for(auto j: adj[i1])
+            {
+                graph1.push_back({j[1],i1,j[0]});
+            }
+        }
+        
+    
+            sort(graph1.begin(),graph1.end()) ;
+    
+        Unionoject obj1(v);
+        int asn1 = 0 ;
+    
+        for (auto edge : graph1)
+        {
+            int wegiht = edge[0] ;
+            int src = edge[1] ;
+            int des = edge[2] ;
+    
+            if (obj1.find(src)!=obj1.find(des)) //not in same set
+            {
+                obj1.unite(src,des) ;
+                asn1+=wegiht ;
+            }
+        }
+        return asn1 ;    
+    
+            
+        
+    }
 
 
 int kruskal_mst(int v , vector<vector<int> > graph1)
 {
 
     sort(graph1.begin(),graph1.end()) ;
-
+    // /select shotreset weight and check if not cycle
     Unionoject obj1(v);
     int asn1 = 0 ;
 
