@@ -1,4 +1,3 @@
-
 // https://www.geeksforgeeks.org/dijkstras-shortest-path-algorithm-using-priority_queue-stl/
 
 #include <bits/stdc++.h>
@@ -13,38 +12,52 @@ void addEdge(int u,int v , int w,vector<pair<int,int>> adj1[])
 
 
 
+
+
+
 vector<int> shortestPath(int src,int V,vector<pair<int,int>> adj1[]) 
 {
 
-    priority_queue< pair<int,int> ,vector<pair<int,int>> ,greater<pair<int,int>> > pq;
-    vector<int> di1st(V,INT_MAX) ;
-    pq.push(make_pair(0,src)) ;
-    di1st[src] = 0;
-    while (!pq.empty())
-    {
-        int u = pq.top().second ; //minimum distance 
-        pq.pop();
-        for (auto i=adj1[u].begin(); i!=adj1[u].end(); i++)
-        {
-            //update all neibour of curent vertex
-            int v = (*i).first ;
-            int weight = (*i).second ;
+    set<pair<int,int>> heap1 ;
+    vector<int> dis1t(V,INT_MAX) ;
 
-            if (di1st[v]>di1st[u]+weight)
+    heap1.insert({0,src});
+
+    dis1t[src] = 0;
+    int u , v, weigjt ;
+    while (!heap1.empty())
+    {
+        pair<int,int> temp = *(heap1.begin()) ;
+        heap1.erase(heap1.begin()) ;
+        u = temp.second ;
+
+        for (auto i1 = adj1[u].begin(); i1!=adj1[u].end(); i1++)
+        {
+            //update the neighbours 
+            v = (*i1).first ;
+            weigjt = (*i1).second ;
+
+            if (dis1t[v]>dis1t[u]+weigjt)
             {
-                di1st[v]=di1st[u]+weight;
-                pq.push(make_pair(di1st[v],v));
+                if (dis1t[v]!=INT_MAX)
+                {
+                    heap1.erase(heap1.find({dis1t[v],v}));
+                }
+                dis1t[v]=dis1t[u]+weigjt;
+                heap1.insert({dis1t[v],v});
             }
         }
     }
-    return di1st ;
+    return dis1t ;
 }
+
 
 
 
 
 int main(int argc, char const *argv[])
 {
+
     int V ;
 
     vector<pair<int,int>> *adj ;
@@ -70,12 +83,11 @@ int main(int argc, char const *argv[])
 
 
 
-
-
-
-
-
     return 0;
 }
+
+
+
+
 
 

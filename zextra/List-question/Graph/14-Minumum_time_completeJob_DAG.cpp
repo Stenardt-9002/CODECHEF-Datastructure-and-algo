@@ -10,7 +10,7 @@
 using namespace std;
 
 
-
+//BFS Kahn algorithm
 
 void addEdge(int u , int v,vector<int>graph[],vector<int> &indegree)
 {
