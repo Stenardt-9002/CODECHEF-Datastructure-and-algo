@@ -45,7 +45,7 @@ bool isBipartite(int V, vector<int>adj[])
     queue<int> q1 ;
 
     for (int vertex1 = 0; vertex1 < V; vertex1++)
-    {
+    {//if disconnected components
         if (whatvolor[vertex1]==-1)
         {
             whatvolor[vertex1] = 1 ; //src coloured red

@@ -316,3 +316,69 @@ int main(int argc, char const *argv[])
     // }
 
 
+
+struct Node
+{
+    int data ;Node *left,*right ;
+    Node(int val)
+    {
+        data = val;left=right =NULL;
+    }
+};
+
+
+
+Node *deleteNode(Node *root, int X) 
+{
+    if(root==NULL)
+    {
+        return NULL ;
+    }
+    
+    if(root->data>X){root->left = deleteNode(root->left,X) ;return root ;}
+    else if(root->data<X){root->right = deleteNode(root->right,X) ;return root ;} 
+    
+    if(root->left==NULL && root->right==NULL )    {return NULL ;}
+    else if(root->left==NULL){ Node *temp1 = root->right ;delete root ; return temp1 ; }
+    else if(root->right==NULL){ Node *temp1 = root->left ;delete root ; return temp1 ; }
+    else
+    {
+        //two children inorder successor
+        Node *orig = root ;
+        
+        Node *temp1 = root->right ;
+        while(temp1->left!=NULL)
+        {
+            root = temp1;
+            temp1= temp1->left ;
+        }
+        // data swap 
+        
+        if(root!=orig)
+        {
+            root->left = temp1->right ;
+        }
+        else
+        {
+            root->right = temp1->right;
+        }
+        orig->data = temp1->data ;
+        delete temp1;
+        // int data1 = orig->data ;
+        // orig->data = temp1->data ;
+        // temp1->data = data1;
+        
+        // root->left = deleteNode(root->left,X);
+        return orig ;
+    }
+    
+    
+
+
+
+
+
+
+
+
+
