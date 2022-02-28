@@ -1,6 +1,11 @@
 {
     "files.associations": {
         "new": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "array": "cpp",
+        "any": "cpp",
+        "string_view": "cpp",
+        "regex": "cpp",
+        "ostream": "cpp"
     }
 }
