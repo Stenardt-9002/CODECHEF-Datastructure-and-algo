@@ -1,0 +1,108 @@
+// https://practice.geeksforgeeks.org/problems/brothers-from-different-root/1
+
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Node {
+    int data;
+    Node *left;
+    Node *right;
+
+    Node(int val) {
+        data = val;
+        left = right = NULL;
+    }
+};
+void inorder1(Node *roo1, vector<int> &ar1)
+{
+    if (roo1!=NULL)
+    {
+        inorder1(roo1->left,ar1) ;
+        ar1.push_back(roo1->data) ;
+        inorder1(roo1->right,ar1);
+
+    }
+    return ;
+    
+}
+
+bool s_earch( Node *root1,int x1)
+{
+    while (root1!=NULL)
+    {
+        if (root1->data>x1)
+            root1 = root1->left ;
+        else if(root1->data<x1)        
+            root1 = root1->right ;
+        else 
+            return true;
+
+    }
+    return false ;
+
+}
+
+int countPairs(Node* root1, Node* root2, int x)
+{
+    vector<int> ar1 ,ar2;
+    inorder1(root1,ar1);
+    // inorder1(root2,ar2) ;
+    int ans1 = 0;
+    int m = ar1.size() ,n = ar2.size();
+    for (int i1 = 0; i1 <m ; i1++)
+    {
+        if (s_earch(root2,x-ar1[i1]))
+            ans1++;
+        
+    }
+    
+    return ans1 ;
+
+}
+
+
+
+
+
+
+    // int countPairs(Node* root1, Node* root2, int x)
+    // {
+    //         vector<int> ar1 ,ar2;
+    // inorder1(root1,ar1);
+    // inorder1(root2,ar2) ;
+    // vector<int> ar3 = mer1ge(ar1,ar2);
+
+    // int i1 = 0,j1=ar3.size()-1;
+
+    // int asn1 = 0;
+    // while (i1<=j1)
+    // {
+    //     if (x>ar3[i1]+ar3[j1])
+    //         i1++ ;
+    //     else if(x<ar3[i1]+ar3[j1])
+    //         j1-- ;
+    //     else
+    //         {
+    //             asn1++ ;
+    //             if (i1+1<j1 && ar3[i1+1]==ar3[i1])
+    //                 i1++;
+
+    //             else if (i1<j1-1 && ar3[j1-1]==ar3[j1])
+    //                 j1-- ;
+
+    //             else 
+    //                 i1++ ;
+    //         }
+
+    // }
+    
+    // return asn1 ;
+    // }
+
+
+
+
