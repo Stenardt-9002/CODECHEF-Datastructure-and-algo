@@ -30,6 +30,11 @@ int iotimalBST(vector<int> freq,vector<int> keys, int n)
         {
             int j1 = i1+len-1;
             dp1[i1][j1] = INT_MAX ;
+            for (int k = i1; k <=j1; k++)
+            {
+                
+            }
+            
         }
         
         
