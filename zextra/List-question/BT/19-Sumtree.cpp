@@ -71,8 +71,6 @@ bool isSumtree(Node* tree1)
         {
             rs = 2*(tree1->right->data); // asuming sum trree else not in function call 
         }
-        
-
 
         return (tree1->data == (ls+rs));
 
