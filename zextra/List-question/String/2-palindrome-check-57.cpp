@@ -24,14 +24,26 @@ int isPlaindrome(char S[])
         {
             return 0 ;
         }
-        
-
     }
     return 1; 
-
-
-
 }
+
+
+
+	int isPalindrome(string S)
+	{
+	    // Your code goes here
+	   int n1 = S.length();
+        for (int i1 = 0; i1 < n1/2; i1++)
+        {
+            if (S[n1-i1-1] != S[i1])
+                return 0 ;
+                
+        }
+        return 1; 
+	}
+
+
 
 int main(int argc, char const *argv[])
 {
