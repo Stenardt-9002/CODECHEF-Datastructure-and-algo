@@ -49,14 +49,10 @@ int main(int argc, char const *argv[])
     {
         temp1 = g.front() ;
         if (temp1->left!=NULL)
-        {
             g.push(temp1->left) ;
-        }
         
         if (temp1->right!=NULL)
-        {
             g.push(temp1->right) ;
-        }
 
         gdata.push_back(temp1->data);
         g.pop() ;
@@ -68,8 +64,6 @@ int main(int argc, char const *argv[])
     }
     
 
-
-
     return 0;
 }
 
@@ -78,3 +72,25 @@ int main(int argc, char const *argv[])
 
 
 
+    vector<int> levelOrder(Node* node)
+    {
+      //Your code here
+      queue<Node*> q1;
+      q1.push(node);
+      vector<int> data1 ;
+      Node *temp1;
+      while(!q1.empty())
+      {
+          temp1 = q1.front();
+          q1.pop();
+          if(temp1->left !=NULL)
+            q1.push(temp1->left);
+            
+          if(temp1->right !=NULL)
+            q1.push(temp1->right);
+        
+        data1.push_back(temp1->data);
+      }
+      
+      return data1;
+    }
