@@ -1,10 +1,5 @@
 
 
-
-
-
-
-
 #include<iostream>
 #include<vector>
 #include<queue>
@@ -42,16 +37,8 @@ int height1(Node *tre1)
     {
         int ledtph = height1(tre1->left);
         int redtph = height1(tre1->right);
-        if (ledtph>redtph )
-        {
-            return ledtph+1 ;
-        }
-        else
-        {
-            return redtph+1 ;
-        }
-        
-        
+        return max(ledtph,redtph)+1;
+     
     }
     
     
