@@ -65,6 +65,17 @@ vector<int> getInorder(TreeNode* root)
     return Iorder1 ;
 }
 
+void inorder_n(TreeNode* node1)
+{
+    if(node1!=NULL)
+    {
+        inorder_n(node1->left);
+        cout<<" "<<node1->val ;
+        inorder_n(node1->right);
+    }
+}
+
+
 
 
 int main(int argc, char const *argv[])

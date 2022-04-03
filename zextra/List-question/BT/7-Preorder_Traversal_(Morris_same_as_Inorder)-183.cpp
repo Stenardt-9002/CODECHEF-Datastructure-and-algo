@@ -62,6 +62,17 @@ vector<int> getInorder(TreeNode* root)
 }
 
 
+void preorder_n(TreeNode* node1)
+{
+    if(node1!=NULL)
+    {
+        cout<<" "<<node1->val ;
+        preorder_n(node1->left);
+        preorder_n(node1->right);
+    }
+}
+
+
 
 int main(int argc, char const *argv[])
 {
