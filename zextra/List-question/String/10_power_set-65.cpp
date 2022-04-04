@@ -13,7 +13,6 @@ typedef  long long ll1d;
 
 
 
-using namespace std;
 
 
 vector<string> AllPossibleStrings(string s)
