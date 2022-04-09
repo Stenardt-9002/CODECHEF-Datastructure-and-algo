@@ -10,6 +10,7 @@
         "utility": "cpp",
         "valarray": "cpp",
         "random": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "*.tcc": "cpp"
     }
 }

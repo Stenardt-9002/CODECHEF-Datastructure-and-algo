@@ -57,7 +57,6 @@ void MorrisTraversal(Node* root)
                 pre->right = NULL ;//setting tree original
                 cout<<" "<<curr->data<<" ";
                 curr = curr->right ;
-
             }
         }          
     }
