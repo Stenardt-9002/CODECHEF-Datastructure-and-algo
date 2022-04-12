@@ -19,9 +19,7 @@ Node* newNode(int val)
     temp1->data = val ;
     temp1->left = NULL ;
     temp1->right = NULL ;
-
     return temp1 ;
-
 }
 
 

@@ -21,9 +21,7 @@ Node* newNode(int val)
     temp1->data = val ;
     temp1->left = NULL ;
     temp1->right = NULL ;
-
     return temp1 ;
-
 }
 
 // # not using dictionary 
@@ -31,14 +29,11 @@ Node* newNode(int val)
 vector<int> topview(Node* root)
 {
     if (root==NULL)
-    {
         return {};
-    }
+
         vector<int> asnwer ;
         queue<pair<Node*, int> > q;
         q.push(make_pair(root, 0));
-        map<int,int> m1 ; //mapping left right distance with first node encounterd
-
         Node* temp1 ;
         int inithd = 0,l=0,r=0;
         vector<int> rightsideanswer ; 

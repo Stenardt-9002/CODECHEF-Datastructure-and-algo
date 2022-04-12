@@ -20,9 +20,7 @@ Node* newNode(int val)
     temp1->data = val ;
     temp1->left = NULL ;
     temp1->right = NULL ;
-
     return temp1 ;
-
 }
 
 
@@ -30,17 +28,11 @@ void diagnolUtil(Node *root, int d ,map<int,vector<int>> &var1 )
 {
     
     if (root==NULL)
-    {
         return ;
-    }
     
     var1[d].push_back(root->data) ;
-
     diagnolUtil(root->left,d+1,var1) ;
     diagnolUtil(root->right,d,var1) ;
-
-    
-
 }
 
 
@@ -48,21 +40,13 @@ void diagnolUtil(Node *root, int d ,map<int,vector<int>> &var1 )
 vector<int> diagnolList(Node *root)
 {
     vector <int> sasnwer ;
-
     map<int,vector<int>> var1 ;
     diagnolUtil(root,0,var1) ;
     for (auto it : var1)
-    {
         for (auto it2 : it.second  )
-        {
             sasnwer.push_back(it2);
-        }
-        
 
-    }
-    
     return sasnwer;
-
 }
 
 
@@ -85,27 +69,12 @@ int main(int argc, char const *argv[])
     tree1->left->right->right = newNode(7) ;
 
 
-
-
-
-
-
-
-
-
     vector<int> x1 = diagnolList(tree1);
     cout<<endl;
     for (auto i1 : x1)
     {
         cout<<" "<<i1 ;
     }
-    
-
-
-
-
-
-
     return 0;
 }
 

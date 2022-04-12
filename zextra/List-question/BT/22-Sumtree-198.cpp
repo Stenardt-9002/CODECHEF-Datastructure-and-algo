@@ -30,10 +30,9 @@ Node* newNode(int val)
 bool isLeaf(Node* tree1)
 {
     if (tree1!=NULL && tree1->left==NULL && tree1->right==NULL)
-    {
-        return 1 ;
-    }
-    return 0;
+        return true ;
+
+    return false;
 }
 
 
@@ -41,44 +40,35 @@ bool isSumtree(Node* tree1)
 {
     int ls , rs ;
     if (tree1==NULL || isLeaf(tree1))
-    {
-        return 1 ; //a;l empty and single node tree are sum tree
-    }
+        return true ; //a;l empty and single node tree are sum tree
+
     if (isSumtree(tree1->left) && isSumtree(tree1->right) )
     {
         if (tree1->left == NULL)
-        {
             ls = 0;
-        }
+
         else if(isLeaf(tree1->left))
-        {
             ls = (tree1->left->data);
-        }   
+
         else
-        {
             ls = 2*(tree1->left->data); // asuming sum trree else not in function call 
-        }
-        
+
+
+
+
         if (tree1->right == NULL)
-        {
             rs = 0;
-        }
+
         else if(isLeaf(tree1->right))
-        {
             rs = (tree1->right->data);
-        }   
+
         else
-        {
             rs = 2*(tree1->right->data); // asuming sum trree else not in function call 
-        }
 
         return (tree1->data == (ls+rs));
 
     }
-    return 0 ;
-    
-    
-    
+    return false  ;
 }
 
 
