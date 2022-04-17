@@ -38,9 +38,9 @@ vector<vector<string> > Anagrams(vector<string>& string_list)
     for (auto x:string_list)
         copy2.push_back(x)    ;
     
-    sort(copy2.begin(),copy2.end());
+    // sort(copy2.begin(),copy2.end());
     vector<vector<string>> ans1 ; 
-    vector<set<string>> temp1 ;
+    // vector<set<string>> temp1 ;
 
     string rach_word ;
     for (auto x:copy2)
@@ -48,24 +48,24 @@ vector<vector<string> > Anagrams(vector<string>& string_list)
         rach_word = x ;
         // x.copy(rach_word ,x.size());
         sort(rach_word.begin(),rach_word.end());
-        set<string> temp3 ;
-
-        for (auto ind: hashp_dup1[rach_word])
-            temp3.insert(string_list[ind])   ;     
-        hashp_dup1[rach_word] = {};
-        temp1.push_back(temp3);
+        vector<string> temp3 ;
+        if(hashp_dup1[rach_word].size()!=0)
+        {
+            for (auto ind: hashp_dup1[rach_word])
+                temp3.push_back(string_list[ind])   ;     
+            hashp_dup1[rach_word] = {};
+            ans1.push_back(temp3);
+        }
     }
     
 
-    for (auto x : temp1)
-    {
-        vector<string> temp4 ;
-        for (auto y : x)
-            temp4.push_back(y);
-        ans1.push_back(temp4)        ;
-    }
-    
-    
+    // for (auto x : temp1)
+    // {
+    //     vector<string> temp4 ;
+    //     for (auto y : x)
+    //         temp4.push_back(y);
+    //     ans1.push_back(temp4)        ;
+    // }
     return ans1 ;
 }
 
@@ -73,7 +73,14 @@ vector<vector<string> > Anagrams(vector<string>& string_list)
 
 int main(int argc, char const *argv[])
 {
-    
+    vector<string> input1 = {"act","god","cat","dog","tac"} ;
+    vector<vector<string>> ans1 = Anagrams(input1);
+    for (auto x : ans1)
+        {
+            // cout<<endl;
+            for(auto y:x)    
+            cout<<" "<<y;
+        }
     return 0;
 }
 
