@@ -15,14 +15,11 @@ void heapify(int *arr,int n ,int i1)
 
 
     if (l<n&&arr[largest]<arr[l])
-    {
         largest = l ; //finding largest in 3 
-    }
     
     if(r<n&&arr[largest]<arr[r])
-    {
         largest = r ; //finding largest in 3 
-    }
+
     int temp1 ; 
     if (largest!=i1) //if larget is not root
     {
@@ -30,16 +27,9 @@ void heapify(int *arr,int n ,int i1)
         arr[largest] = arr[i1] ;
         arr[i1] = temp1;
         //kepp going down in tree 
-
         heapify(arr,n,largest); //new child to check if largest or not
-
     }
     
-
-
-
-
-
 }
 
 
@@ -54,15 +44,8 @@ void buildHeap(int *arr , int n)
 
 
     for (int i1 = startindex; i1 >=0; i1--)
-    {
         heapify(arr,n,i1) ;
         
-    }
-    
-
-
-
-
 }
 
 

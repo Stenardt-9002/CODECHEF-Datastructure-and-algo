@@ -52,6 +52,14 @@ int transform (string A, string B)
 
 }
 
+int main(int argc, char const *argv[])
+{
+    string A = "EDBACFGH";
+    string B = "GDEBACFH";
+    cout<<endl<<transform(A,B);
+    
+    return 0;
+}
 
 
 
