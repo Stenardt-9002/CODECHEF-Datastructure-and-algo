@@ -41,11 +41,11 @@ int transform (string A, string B)
 
         for ( int i = n-1,j=n-1; i>=0;)
         {
+            while(i>=0 && A[i]!=B[j])
+                {i--;cunt1++;}
             if(i>=0 && A[i]==B[j])
                 {i--;j--;}
 
-            while(i>=0 && A[i]!=B[j])
-                {i--;cunt1++;}
             
         }
         return cunt1 ;

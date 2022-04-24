@@ -59,7 +59,7 @@ int get_Nodes(Node *root)
 
 
 }
-
+//threaded BT
 float Median_Util(Node *root , int n)
 {
     Node *cur,*pre ;
