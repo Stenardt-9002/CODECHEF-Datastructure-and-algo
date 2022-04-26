@@ -43,7 +43,7 @@ string ionrderUtil(Node *root , unordered_map<string,int> &hash_map,vector<Node 
     else
     {
         hash_map[str1]+=1 ;
-        if(hash_map[str1]==2 )
+        if(hash_map[str1]==2 )//duplicate found 
             ans1.push_back(root);
     }
     return str1 ;

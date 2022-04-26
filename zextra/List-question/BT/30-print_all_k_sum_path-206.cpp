@@ -32,7 +32,7 @@ void printKPathUtil(Node *root , vector<int> &curentpath , int sum_val  , vector
     printKPathUtil(root->right,curentpath , sum_val , all_path);
 
     int sum_1 = 0;
-    for (int j1 = curentpath.size()-1; j1 >=0; j1--)
+    for (int j1 = curentpath.size()-1; j1 >=0; j1--)//can start from anywhere
     {
         sum_1+=curentpath[j1];
         cure_path_sum.push_back(curentpath[j1]);

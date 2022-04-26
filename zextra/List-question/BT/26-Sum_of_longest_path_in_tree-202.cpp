@@ -40,7 +40,7 @@ int sumof_util(Node *root,int *height)
         cur_sum = root->data+lsum;
 
     else 
-        cur_sum = max(lsum,rsum)+root->data ;
+        cur_sum = max(lsum,rsum)+root->data ;//same height therefore consider latger sum 
 
     return cur_sum ;
 }
