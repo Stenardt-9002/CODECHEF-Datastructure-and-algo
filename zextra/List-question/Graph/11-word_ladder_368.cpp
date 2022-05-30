@@ -1,62 +1,57 @@
 
 // https://leetcode.com/problems/word-ladder/
 
-#include<bits/stdc++.h>
-using namespace std;
+#include <bits/stdc++.h>
+#include<ext/pb_ds/tree_policy.hpp>
+#include<ext/pb_ds/assoc_container.hpp>
 
+
+using namespace std;
+using namespace __gnu_pbds ;
+typedef  long long ll1d;
 
 
 int ladderLength(string beginWord, string endWord, vector<string>& wordList) 
 {
     if (beginWord==endWord)
-    {
         return 0 ;
-    }
+
     if (find(wordList.begin(),wordList.end(),endWord)==wordList.end())//not found 
-    {
-        return -1;
-    }
+        return 0;
 
-    queue<string> Q ;
-    Q.push(beginWord);
-    string queuword ;
-    int asnwer1 = 0;
-    char cureentchar ;
-    while (!Q.empty())
+    unordered_set<string> dick(wordList.begin(),wordList.end());
+    queue<string> q1 ; 
+    q1.push(beginWord);
+    int ans1 = 0;
+    while (!q1.empty())
     {
-        asnwer1++;
-        for (int i1 = 0; i1 < Q.size(); i1++)
+        int n = q1.size() ;
+        for (int i1 = 0; i1 < n; i1++)
         {
-            queuword = Q.front() ;
-            Q.pop() ;
-            for (int pos = 0; pos < queuword.length(); pos++)
-            {
-                cureentchar = queuword[pos];
-                for (char c = 'a'; c <= 'z'; c++)
-                {
-                    queuword[pos] = c;
-                    if (queuword==endWord)
-                    {
-                        return asnwer1+1;
-                    }
-                    std::vector<string> :: iterator it = find(wordList.begin(),wordList.end(),queuword);
-                    if (it==wordList.end())
-                    {
-                        continue;
-                    }
-                    //find remove from vector 
-                    wordList.erase(it);
-                    Q.push(queuword);
-                }
-                queuword[pos] = cureentchar ;
-            }
+            string cur_word = q1.front() ;
+            q1.pop() ;
+            if(cur_word==endWord)
+                return ans1 ;
             
-        }
-        
+            dick.erase(cur_word);
 
+            //vsit neighbour if exist
+            for(int j1=0;j1<cur_word.size();j1++)
+            {
+                char cur_char = cur_word[j1] ;
+                //all possible alphabets 
+                for(int k1 = 0 ;k1<26;k1++)
+                {
+                    cur_word[j1] = 'a'+k1 ;
+                    if(dick.find(cur_word)!=dick.end())
+                        q1.push(cur_word);
+                }
+                cur_word[j1] = cur_char ;
+            }
+        }
+        ans1++  ;
     }
-    cout<<"EREACHED HERE ";
-    return 0;
+    return 0 ;//not found
 
 }
 
