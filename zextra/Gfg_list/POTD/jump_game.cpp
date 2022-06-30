@@ -1,6 +1,5 @@
 // https://practice.geeksforgeeks.org/problems/smallest-factorial-number5929/1
 //good one
-//visit trailing zero in factorial = (x/5)+(x/25)+(x/125)+(x/625).....
 #include <bits/stdc++.h>
 #include<ext/pb_ds/tree_policy.hpp>
 #include<ext/pb_ds/assoc_container.hpp>
@@ -13,7 +12,6 @@ typedef  long long ll1d;
 
 int canReach(int A[], int N)
 {
-    vector<bool>dp1(N,false);
     // code here
 
     if(A[0]==0)
@@ -37,6 +35,30 @@ int canReach(int A[], int N)
 
         step_taken = Reach-1 ;
       }
+    }
+    return 1 ;
+}
+
+
+
+int canReach(int A[], int N) {
+    // code here
+    if(A[0]==0)
+      return 0 ;
+     if(N==1)
+        return 1 ;
+
+    int Reach = A[0];
+    int i1 ;
+    for (i1 = 1; i1 < N; i1++)
+    {
+      if(Reach<i1)
+        return 0 ;
+      if(Reach>=N)
+        return 1 ;
+
+
+      Reach = max(Reach , i1+A[i1]);
     }
     return 1 ;
 }
