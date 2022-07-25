@@ -85,6 +85,8 @@ typedef  long long int ll;
 
 int fuc_val(int val)
 {
+
+
     int ans1 = 0 ;
     while (val)
     {

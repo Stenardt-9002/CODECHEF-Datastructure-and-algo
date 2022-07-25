@@ -27,6 +27,10 @@ typedef  long long int lld;
 int main(int argc, char const *argv[])
 {
     fastIO
+
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+
     int testcase=1 ;
 
     cin>>testcase ;

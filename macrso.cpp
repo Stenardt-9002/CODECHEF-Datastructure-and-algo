@@ -61,6 +61,8 @@ void processLine_cpp()
 int main(int argc, char const *argv[])
 {
     fastIO
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
 
     int testcases=1 ;
     cin>>testcases;
