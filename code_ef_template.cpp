@@ -27,10 +27,10 @@ typedef  long long int lld;
 int main(int argc, char const *argv[])
 {
     fastIO
-
+    #ifndef ONLINE_JUDGE
     freopen("input.txt","r",stdin);
-    freopen("output.txt","w",stdout);
-
+    freopen("output1.txt","w",stdout);
+    #endif 
     int testcase=1 ;
 
     cin>>testcase ;

@@ -61,9 +61,10 @@ void processLine_cpp()
 int main(int argc, char const *argv[])
 {
     fastIO
+    #ifndef ONLINE_JUDGE
     freopen("input.txt","r",stdin);
-    freopen("output.txt","w",stdout);
-
+    freopen("output1.txt","w",stdout);
+    #endif 
     int testcases=1 ;
     cin>>testcases;
     while (testcases--)
