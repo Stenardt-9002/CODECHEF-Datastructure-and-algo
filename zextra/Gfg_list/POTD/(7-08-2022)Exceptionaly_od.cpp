@@ -17,6 +17,12 @@ int getOddOccurrence(int arr[], int n)
     // {
         
     // }
+            int j1 =0 ;
+        int res = 0 ;
+           for(int i1 = 0 ;i1<n ; i1++)
+            res ^= arr[i1];
+            
+        return res ; 
 }
 
 
