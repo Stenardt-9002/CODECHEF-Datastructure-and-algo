@@ -1,4 +1,4 @@
-// https://practice.geeksforgeeks.org/problems/maximum-difference-of-zeros-and-ones-in-binary-string4111/1
+// https://practice.geeksforgeeks.org/problems/longest-common-subsequence-1587115620/1
 
 
 
@@ -16,24 +16,22 @@ typedef  long long int ll;
 #define fastIO ios_base::sync_with_stdio(false);cin.tie(0);cout.tie(0);
 
 
-
-
-
-
-int maxSubstring(string S)
+int longestSubsequence(int N, int A[])
 {
-    // Your code goes here
-    int current_sum = 0  , max_sum = 0;
-    int n = S.size();
-    for (int i1 = 0; i1 < n; i1++)
-    {
-        current_sum+=((S[i1]=='0')?1:-1) ;
-        current_sum = max(0, current_sum);
-        max_sum = max(max_sum , current_sum);
-    }
+    // code here
     
-    return max_sum==0 ?-1:max_sum ;
+    vector<int> dp1(N,1);
+    int ans1 = 1 ;
+    for (int i = 0; i < N; i++)
+        for (int j1 = i+1; j1 < N; j1++)
+            if(abs(A[j1]-A[i])==1)
+                dp1[j1] = max(dp1[j1],dp1[i]+1) ,ans1 = max(ans1,dp1[j1]);
+    
+    return ans1 ;
+
 }
+
+
 int main(int argc, char const *argv[])
 {
     fastIO
@@ -43,25 +41,26 @@ int main(int argc, char const *argv[])
     freopen("output1.txt","w",stdout);
     #endif 
     int testcase ;
-    cin>>testcase ;
+    // cin>>testcase ;
+    testcase = 2;
     while(testcase--)
     {
         int n ; cin>>n ;
-        int w ; cin>>w ;
+        // int w ; cin>>w ;
         int *val = new int[n];
-        int *wt = new int[n];
+        // int *wt = new int[n];
 
         for (int i1 = 0; i1 < n; i1++)
             cin>>val[i1]     ;
 
-        for (int i1 = 0; i1 < n; i1++)
-            cin>>wt[i1]     ;
+        // for (int i1 = 0; i1 < n; i1++)
+        //     cin>>wt[i1]     ;
 
-
+        cout<<endl<<longestSubsequence(n,val);
 
         // cout<<knapSack(n,w,val,wt)<<endl ;
 
-        delete []val ;delete []wt ;
+        delete []val ;//Sdelete []wt ;
     }    
 
 

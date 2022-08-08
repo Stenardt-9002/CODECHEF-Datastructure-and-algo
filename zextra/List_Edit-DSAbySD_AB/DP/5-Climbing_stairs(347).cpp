@@ -1,4 +1,4 @@
-// https://practice.geeksforgeeks.org/problems/maximum-difference-of-zeros-and-ones-in-binary-string4111/1
+// https://leetcode.com/problems/climbing-stairs/
 
 
 
@@ -17,23 +17,19 @@ typedef  long long int ll;
 
 
 
-
-
-
-int maxSubstring(string S)
+int climbStairs(int n) 
 {
-    // Your code goes here
-    int current_sum = 0  , max_sum = 0;
-    int n = S.size();
-    for (int i1 = 0; i1 < n; i1++)
-    {
-        current_sum+=((S[i1]=='0')?1:-1) ;
-        current_sum = max(0, current_sum);
-        max_sum = max(max_sum , current_sum);
-    }
-    
-    return max_sum==0 ?-1:max_sum ;
+            int a = 0 , b= 1 ;
+        int c ;
+        while(n--)
+        {
+            c = a+b ;
+            a = b ;
+            b = c;
+        }
+        return c ;
 }
+
 int main(int argc, char const *argv[])
 {
     fastIO
@@ -67,5 +63,4 @@ int main(int argc, char const *argv[])
 
     return 0 ;
 }
-
 
