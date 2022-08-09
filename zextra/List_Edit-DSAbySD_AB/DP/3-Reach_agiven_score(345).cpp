@@ -24,19 +24,18 @@ long long int count(long long int n)
 	// memset(table, 0, sizeof(table));
     vector<long long int> table(n+1,0);
 	table[0]=1;                 // If 0 sum is required number of ways is 1.
-	table[3] = 1;
-	table[5] = 1;
-	table[10] = 1;
 
-    for (i1 = 4; i1 <=n; i1++)
-    {
+
+    for (i1 = 3; i1 <=n; i1++)
         if(i1>=3)
             table[i1]+=table[i1-3];
+    for (i1 = 5; i1 <=n; i1++)
         if(i1>=5)
             table[i1]+=table[i1-5];
+    for (i1 = 10; i1 <=n; i1++)
         if(i1>=10)
             table[i1]+=table[i1-10];
-    }
+    
     
 
 	// Your code here
