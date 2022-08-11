@@ -9,7 +9,7 @@ using namespace std;
 using namespace __gnu_pbds ;
 typedef  long long ll1d;
 
-#define fastIO ios_base::sync_with_stdio(false);cin.tie(0);cout
+#define fastIO ios_base::sync_with_stdio(false);cin.tie(0);
 
 
 struct Node

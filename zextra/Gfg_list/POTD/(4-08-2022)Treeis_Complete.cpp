@@ -8,7 +8,7 @@
 using namespace std;
 using namespace __gnu_pbds ;
 typedef  long long ll1d;
-#define fastIO ios_base::sync_with_stdio(false);cin.tie(0);cout
+#define fastIO ios_base::sync_with_stdio(false);cin.tie(0);
 
 // #define MOD1 1000000007
 struct Node
@@ -61,7 +61,7 @@ int main(int argc, char const *argv[])
     {   
         int n,m,k ;
         cin>>m>>n>>k ;
-        cout<<endl<<knots(m,n,k);
+        // cout<<endl<<knots(m,n,k);
     }
     return 0;
 }
