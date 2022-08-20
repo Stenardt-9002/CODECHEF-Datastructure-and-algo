@@ -42,38 +42,38 @@ int lenOfLongSubarr(int A[],  int N, int K)
 
 } 
 
-int lenOfLongSubarr(int A[],  int N, int K) 
-{ 
+// int lenOfLongSubarr(int A[],  int N, int K) 
+// { 
     
-    // Complete the function
-    int i1 =0 , j1=0 ;
-    int sum1 = 0 ;
-    int ans1_len = 0 ;
-    while(i1<N)
-    {
-        sum1+=A[i1];
-        if(sum1 == K)
-            ans1_len = max(i1-j1+1,ans1_len) ,i1++ ;
-        else if(sum1>K)
-        {
-            while(sum1>K)
-            {
-                sum1-=A[j1];
-                j1++ ;
-            }
-            if(sum1 == K)
-                ans1_len = max(i1+1-j1,ans1_len) ;
+//     // Complete the function
+//     int i1 =0 , j1=0 ;
+//     int sum1 = 0 ;
+//     int ans1_len = 0 ;
+//     while(i1<N)
+//     {
+//         sum1+=A[i1];
+//         if(sum1 == K)
+//             ans1_len = max(i1-j1+1,ans1_len) ,i1++ ;
+//         else if(sum1>K)
+//         {
+//             while(sum1>K)
+//             {
+//                 sum1-=A[j1];
+//                 j1++ ;
+//             }
+//             if(sum1 == K)
+//                 ans1_len = max(i1+1-j1,ans1_len) ;
 
-            i1++ ;                
-        }
-        else
-            i1++ ;
+//             i1++ ;                
+//         }
+//         else
+//             i1++ ;
 
-    }    
+//     }    
 
-    return ans1_len ;
+//     return ans1_len ;
 
 
-} 
+// } 
 
 
