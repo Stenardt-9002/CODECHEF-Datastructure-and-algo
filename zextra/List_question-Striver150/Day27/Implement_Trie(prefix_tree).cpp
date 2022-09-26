@@ -24,6 +24,7 @@ const int MOD1 = 1000000007;
 const long long int mod2 =  1e18 ;
 
 class Node {
+    public:
     Node *links[26];
     bool flag = false ;
     bool containsKey(char ch)
@@ -34,7 +35,10 @@ class Node {
     {
         links[ch-'a'] = node ;
     }
-
+    Node *get(char ch)
+    {
+        return links[ch-'a'];
+    } 
 };
 
 class Trie {
@@ -43,28 +47,46 @@ public:
     Node* root  ;
 
     Trie() {
-        
+        root = new Node();
     }
     
     void insert(string word) 
     {
         Node *node = root ;
-        for (int i1 = 0; i1 < word.length(); i1++)
+        for (int i1 = 0; word[i1]; i1++)
         {
-            if(node->containsKey(word[i1])!=NULL)
-            {
+            if(!node->containsKey(word[i1]))
+                node->put(word[i1] , new Node());
 
-            }
+            node = node->get(word[i1]);//moving to refrence trie
         }
+        node->flag = true ;//set end 
         
     }
     
     bool search(string word) {
-        
+        Node *node = root ;
+        for (int i1 = 0; word[i1]; i1++)
+        {
+            if(!node->containsKey(word[i1]))
+                return false ;
+
+            node = node->get(word[i1]);
+        }
+        return node->flag ;
     }
     
-    bool startsWith(string prefix) {
-        
+    bool startsWith(string prefix) 
+    {
+        Node *node = root ;
+        for (int i1 = 0; prefix[i1]; i1++)
+        {
+            if(!node->containsKey(prefix[i1]))
+                return false ;
+
+            node = node->get(prefix[i1]);
+        }
+        return true ;    
     }
 };
 
