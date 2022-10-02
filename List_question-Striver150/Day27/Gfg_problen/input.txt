@@ -1,0 +1,32 @@
+1
+1
+GEEKS
+3 3
+G I Z
+U E K
+Q S E
+
+4
+GEEKS FOR QUIZ GO
+3 3
+G I Z
+U E K
+Q S E
+
+2
+DB BCD
+5 2
+D D
+B F
+E C
+B C
+D C
+
+
+6
+DFD DED FD E DEC DF
+4 2
+F F
+D E
+F B
+B E
