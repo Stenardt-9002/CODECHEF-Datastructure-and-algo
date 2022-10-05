@@ -84,37 +84,4 @@ void addCarryToRemaining(Node* head1, Node* curr, int* carry, Node** result)
 
 
 
-int main(int argc, char const *argv[])
-{
-    fastIO
-
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt","r",stdin);
-    freopen("output1.txt","w",stdout);
-    #endif 
-
-    Node *head1 = new Node(9);
-    head1->next = new Node(7);
-    head1->next->next = new Node(3);
-
-
-    Node *head2 = new Node(2);
-    head2->next = new Node(7);
-
-    
-    int testcase ;
-    // long long int n ;//, target;
-    testcase=1 ;
-    // cin>>testcase;
-    while (testcase--)
-    {
-        // cin>>n;
-        int car = 0;
-        Node *ans1 = addSameSize(head1,head2,&car);
-        cout<<endl;
-        cout<<car<<" "<<ans1->data<<" "<<ans1->next->data;
-    }
-    return 0 ;
-}
-
 
