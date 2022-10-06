@@ -48,7 +48,12 @@ vector<vector<int> > stockBuySell(vector<int> A, int n)
 }
 
 
+// https://leetcode.com/problems/maximum-length-of-repeated-subarray/discuss/2599448/C%2B%2B-or-DP-or-Related-Problems
 
+// 62. Unique Paths
+// 70. Climbing Stairs
+// 509. Fibonacci Number
+//  639. Decode Ways II.
 
 
 
