@@ -21,10 +21,9 @@ const int MOD1 = 1000000007;
 class Node
 {
     public :
-    Node *links[26];
-    int isleaf_count = 0 ;
-    int prefix_count = 0;
-    int first_index_occur = -1;
+    Node *links[26];//26 small characters
+    int isleaf_count = 0 ;//words ending here
+    int first_index_occur = -1;//the word ending here first index occurrence
     void put(char ch , Node *node1)
     {
         this->links[ch-'a'] = node1 ;
@@ -36,10 +35,6 @@ class Node
     Node* get(char ch)
     {
         return this->links[ch-'a'];
-    }
-    void increment_prefix()
-    {
-        this->prefix_count++ ;
     }
     void at_end()
     {
@@ -63,14 +58,16 @@ public:
                 traverse->put(word[i1],new Node());
             
             traverse = traverse->get(word[i1]);
-            traverse->increment_prefix();
         }
         traverse->at_end();
-        int ans1 = traverse->isleaf_count;
+
+        //set index of first occurrence of the word
         if(traverse->first_index_occur==-1)
             traverse->first_index_occur=index ;
         int index_ans = traverse->first_index_occur ;
+        int ans1 = traverse->isleaf_count;
         return {index_ans , ans1};
+        // the index first occurrence , number of time occurrence
     }
 
 };
@@ -82,32 +79,41 @@ Trie::Trie()
 
 
 
-string mostFrequentWord(string arr[], int n) 
+// string mostFrequentWord(string arr[], int n) 
+string findWord(vector<string> arr) 
 {
     // code here
-    Trie* start = new Trie();
-    int most_count = 0 ;
-    int ans1_index = 0 ;
+    int n = arr.size();
+    Trie* root = new Trie();
+    int most_count = 0 ;//maintain the count of the word
+    int ans1_index = 0 ;//index of the word of first occurrence
     string ans1 = arr[0];
     for (int i1 = 0; i1 < n; i1++)
     {
-        pair<int,int > out = start->insert(arr[i1],i1);
-        if(most_count<out.second || (most_count==out.second && ans1_index<out.first))
+        pair<int,int > insert_data = root->insert(arr[i1],i1);
+        if(most_count<insert_data.second || (most_count==insert_data.second && ans1_index<insert_data.first))
         {
             ans1 = arr[i1];
-            most_count = out.second ;
-            ans1_index = out.first ;
+            most_count = insert_data.second ;
+            ans1_index = insert_data.first ;
         }
     }
     return ans1 ;
 }
 
-// https://leetcode.com/problems/maximum-length-of-repeated-subarray/discuss/2599448/C%2B%2B-or-DP-or-Related-Problems
+int main()
+{
+    vector<string> arr{ "geeks",    "for",     "geeks",
+                        "a",        "portal",  "to",
+                        "learn",    "can",     "be",
+                        "computer", "science", "zoom",
+                        "yup",      "fire",    "in",
+                        "be",       "data",    "geeks" };
+    string sol = findWord(arr);
+    // Print word having highest frequency
+    cout << sol << endl;
+}
 
-// 62. Unique Paths
-// 70. Climbing Stairs
-// 509. Fibonacci Number
-//  639. Decode Ways II.
 
 
 
