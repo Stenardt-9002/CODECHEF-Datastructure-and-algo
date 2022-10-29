@@ -59,4 +59,22 @@ int fillingBucket(int N)
 
 
 
+int main(int argc, char const *argv[])
+{
+    fastIO
+    #ifndef ONLINE_JUDGE
+    freopen("input.txt","r",stdin);
+    freopen("output1.txt","w",stdout);
+    #endif
+    int testcases=1 ;
+    cin>>testcases;
+    while (testcases--)
+    {
+
+    }
+
+
+    return 0;
+}
+
 
