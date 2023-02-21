@@ -41,20 +41,76 @@ const int MOD1 = 1000000007;
 
 
 
+struct Node
+{
+    int data;
+    struct Node *left, *right;
+};
 
 
 
 
 
 
+void recrusrive(Node* node , vector<int> &correct_o ,int &cur_index)
+{
+    if(node==NULL)
+        return ; 
+    recrusrive(node->left , correct_o , cur_index);
+    node->data = correct_o[cur_index++];
+    recrusrive(node->right , correct_o , cur_index);
 
-
+}
 
 
 class Solution {
   public:
-    struct Node *correctBST(struct Node *root) {    
+    struct Node *correctBST(struct Node *root) 
+    {    
         // code here
+        struct Node* current , *pre ;
+        if(root==NULL)
+            return NULL;
+
+        vector<int> correct_ ;
+        current = root ;
+        while (current!=NULL)
+        {
+            if(current->left==NULL)
+            {
+                correct_.push_back(current->data);
+                current = current->right ;
+            }
+            else 
+            {
+                pre = current->left ;
+                while (pre->right!=NULL && pre->right!=current)
+                    pre = pre->right ;
+
+                if(pre->right!=NULL)
+                {
+                    pre->right = NULL;
+                    correct_.push_back(current->data);
+                    current = current->right ;
+                }
+                else 
+                {
+                    pre->right = current ;
+                    current = current->left ;
+                }
+
+
+            }
+
+        }
+        
+        sort(correct_.begin() , correct_.end());
+        int index = 0 ;
+        recrusrive(root , correct_ , index);
+
+        return root ;
+        
+        
     }
 };
 
